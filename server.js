@@ -6,11 +6,11 @@ app.use(express.json());
 
 // Criação do transporte de e-mail usando um servidor SMTP (Exemplo usando o Gmail)
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'sandbox.smtp.mailtrap.io',
   auth: {
-    user: 'seuemail@gmail.com',
-    pass: 'suasenha'
-  }
+    user: 'f47295641a01f3',
+    pass: '5725cead361927'
+  },
 });
 
 // Rota para enviar e-mail
@@ -18,7 +18,7 @@ app.post('/send-email', (req, res) => {
   const { to, subject, text } = req.body;
 
   const mailOptions = {
-    from: 'seuemail@gmail.com',
+    from: 'roberto@gmail.com',
     to: to,
     subject: subject,
     text: text
